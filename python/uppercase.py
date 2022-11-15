@@ -4,7 +4,8 @@
 Created on Tue Nov 15 08:29:17 2022
 
 @author: Sureshkumar Ramachandran
-Function: 
+@Type: DATA PROCESSING
+@Function: 
 1. First letter of the column names to be in capital ---> convertCase
 2. Name column to be Full in Capital Letters ---> upperCase
 """
