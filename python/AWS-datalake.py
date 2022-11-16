@@ -15,6 +15,22 @@ secret_access_key = config['secret_access_key']
 pwd = os.environ['PGPASS']
 uid = os.environ['PGUID']
 
+'''
+#Creating a seperate env file for env username and password
+#explicitly providing path to '.env'
+
+from pathlib import Path  # python3 only
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
+
+# settings.py
+import os
+ENV_USERNAME = os.getenv("USERNAME")
+ENV_PASSWORD = os.getenv("PASSWORD")
+
+'''
+
+
 # sql db details
 dr = "ORACLEDRIVERLOCATION"
 srvr = "SERVERDETAILS"
@@ -38,7 +54,7 @@ def extract():
         print("Data extract error: " + str(e))
 
 
-# load data to postgres
+# load data to AWS S3 Bucket in CSV format
 def load(df, tbl):
     try:
         rows_imported = 0
